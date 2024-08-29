@@ -18,6 +18,13 @@ let Hobby = class Hobby extends sequelize_typescript_1.Model {
 };
 exports.Hobby = Hobby;
 __decorate([
+    (0, sequelize_typescript_1.IsUUID)(4),
+    (0, sequelize_typescript_1.Default)(sequelize_typescript_1.DataType.UUIDV4),
+    sequelize_typescript_1.PrimaryKey,
+    sequelize_typescript_1.Column,
+    __metadata("design:type", String)
+], Hobby.prototype, "id", void 0);
+__decorate([
     sequelize_typescript_1.Column,
     __metadata("design:type", String)
 ], Hobby.prototype, "name", void 0);

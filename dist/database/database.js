@@ -27,7 +27,7 @@ class Database {
         try {
             await this._sequelize.authenticate();
             console.log('Connected to: ', config_1.config.database.url);
-            await this._sequelize.sync();
+            await this._sequelize.sync({ force: true });
         }
         catch (error) {
             console.error('Unable to connect to the database:', error);
