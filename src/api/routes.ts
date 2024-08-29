@@ -10,6 +10,11 @@ router.get('/person', async (req, res) => {
   res.json(people);
 });
 
+router.get('/person/:id', async (req, res) => {
+  const person = await Person.findByPk(req.params.id, { include: Hobby });
+  res.json(person);
+});
+
 router.post('/person', async (req, res) => {
   const person = await Person.create(req.body);
   res.json(person);
